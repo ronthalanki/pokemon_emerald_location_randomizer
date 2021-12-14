@@ -1,0 +1,41 @@
+Petalburg/Oldale, Briney's House, Oldale Mart, Oldale NW, Oldale Pokecenter, Oldale SE, Petalburg Gym, Petalburg Mart, Petalburg NW, Petalburg Pokecenter, Petalburg SE, Petalburg SW, Petalburg Woods E, Petalburg Woods W
+Rustboro, Flower Shop, R116 House, R116 Rusturf, Rustboro Devon Corp, Rustboro E, Rustboro Gym, Rustboro Mart, Rustboro NE, Rustboro W, Rustboro Pokecenter, Rustboro SE, Rustboro SW, Rustboro Trainer School, Rustboro Cut House, Rustboro Petalburg Woods
+Dewford, Dewford Granite Cave, Dewford Gym, Dewford Hall, Dewford NE, Dewford Pokecenter, Dewford SE
+Slateport/Mauville/Verdanturf, Slateport Contest, Slateport Shipyard, Slateport Fan Club, Slateport Mart, Slateport Museum, Slateport Name Rater, Slateport Pokecenter, Slateport SE, R109 Seashore House, R110 Cycle Road S, R110 Trickhouse, Daycare, Mauville Bike Shop, Mauville Casino, Mauville Gym, Mauville Mart, Mauville Pokecenter, Mauville S, Mauville SE, R110 Cycle Road N, R111 Winstrate House, Verdanturf Contest, Verdanturf Mart, Verdanturf Pokecenter, Verdanturf Rusturf Tunnel, Verdanturf SW, Verdanturf S, Verdanturf SE
+Fallarbor, Fallarbor Contest, Fallarbor Fossil Maniac, Fallarbor Mart, Fallarbor Move Relearner, Fallarbor Pokecenter, Fallarbor S, R113 Glass Workshop, R111 Old Lady, R112 Fiery Path N, R114 Lanette, R114 Meteor Falls
+Desert, R111 Mirage Tower, R111 Regirock
+Lavaridge, Lavaridge Gym, Lavaridge Herb Shop, Lavaridge Mart, Lavaridge Pokecenter, Lavaridge SE
+R112, R112 Fiery Path S, R112 Jagged Pass, R112 Mt. Chimney
+Fortree/Lilycove, Fortree Gym, Fortree Mart, Fortree Pokecenter, Fortree NE, Fortree NNE, Fortree NNW , Fortree NW, Fortree SE, Fortree SW, R120 Registeel, Lilycove Contest, Lilycove Mart, Lilycove Motel, Lilycove Move Deleter, Lilycove Pokecenter, Lilycove Submarine, Lilycove Fanclub, Lilycove W, Lilycove SW, Lilycove NE, Lilycove E
+Lilycove Aqua Hideout
+Mossdeep Gym, Mossdeep Mart, Mossdeep Pokecenter, Mossdeep Space Center, Mossdeep NW, Mossdeep W, Mossdeep N, Mossdeep S, Mossdeep NE, Mossdeep SE
+Pacifidlog, Pacifidlog NE, Pacifidlog NW, Pacifidlog Pokecenter, Pacifidlog S, Pacifidlog SE, Pacifidlog SW
+Sootopolis East, Sootopolis Pokecenter, Sootopolis E1, Sootopolis E2, Sootopolis E3, Sootopolis E4, Sootopolis E5
+Sootopolis West, Sootopolis Mart, Sootopolis Origin Cave, Sootopolis W1, Sootopolis W2, Sootopolis W3, Sootopolis W4
+Sootopolis Gym
+Petalburg Woods, Petalburg Woods N, Petalburg Woods SE, Petalburg Woods SW
+Rusturf Tunnel, Rusturf Tunnel E, Rusturf Tunnel S
+Rusturf Tunnel W
+Granite Cave 1F Ledge, Granite Cave 1F Ledge E, Granite Cave 1F Ledge W
+Granite Cave 1F, Granite Cave 1F W, Granite Cave 1F E
+Granite Cave B1F Ledge NE
+Granite Cave B1F Ledge N
+Granite Cave B1F Ledge NW
+Granite Cave B1F, Granite Cave B1F SE, Granite Cave B1F SW
+Granite Cave B2F E
+Granite Cave B2F W
+Abandoned Ship 1F Left, Abandoned Ship 1F Left Exit, Abandoned Ship 1F Left N, Abandoned Ship 1F Left S, Abandoned Ship 1F Left Stairs
+Abandoned Ship 1F Right, Abandoned Ship 1F Right Exit, Abandoned Ship 1F Right NE, Abandoned Ship 1F Right NW, Abandoned Ship 1F Right SE, Abandoned Ship 1F Right Stairs, Abandoned Ship 1F Right SW
+Abandoned Ship Room Interior, Abandoned Ship Room Interior NE, Abandoned Ship Room Interior S, Abandoned Ship Room Interior SE
+Abandoned Ship B1F, Abandoned Ship B1F N, Abandoned Ship B1F NE, Abandoned Ship B1F NW, Abandoned Ship B1F S, Abandoned Ship B1F SE, Abandoned Ship B1F Stairs NE, Abandoned Ship B1F Stairs NW, Abandoned Ship B1F SW
+Jagged Pass, Jagged Pass N, Jagged Pass Magma Hideout
+Jagged Pass S
+Meteor Falls 1F, Meteor Falls 1F E, Meteor Falls 1F S
+Meteor Falls 1F N
+Meteor Falls 1F R2, Meteor Falls 1F R2 E, Meteor Falls 1F R2 S
+Meteor Falls 1F R2 NW
+Meteor Falls 1F R2 W
+Meteor Falls B1F Left, Meteor Falls B1F Left E, Meteor Falls B1F Left N, Meteor Falls B1F Left SW
+Meteor Falls B1F Right N
+Meteor Falls B1F Right S
+Meteor Falls B1F Right W
