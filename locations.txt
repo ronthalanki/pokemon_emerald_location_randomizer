@@ -39,3 +39,119 @@ Meteor Falls B1F Left, Meteor Falls B1F Left E, Meteor Falls B1F Left N, Meteor 
 Meteor Falls B1F Right N
 Meteor Falls B1F Right S
 Meteor Falls B1F Right W
+Mirage Tower 1F, Mirage Tower 1F N, Mirage Tower 1F S
+Mirage Tower 2F N
+Mirage Tower 2F S
+Mirage Tower 3F E
+Mirage Tower 3F W
+Route 119/123, R119 Weather Institute, R119 Wingull House, R123 Berry Master
+Mt Pyre 1F Ceiling
+Mt Pyre 1F, Mt Pyre 1F S, Mt Pyre 1F Up, Mt Pyre 1F W
+Mt Pyre 2F Ceiling 1
+Mt Pyre 2F Ceiling 2
+Mt Pyre 2F, Mt Pyre 2F Down, Mt Pyre 2F Hole, Mt Pyre 2F Up
+Mt Pyre 3F Ceiling
+Mt Pyre 3F, Mt Pyre 3F Down, Mt Pyre 3F Hole, Mt Pyre 3F Up
+Mt Pyre 4F Ceiling
+Mt Pyre 4F, Mt Pyre 4F Down, Mt Pyre 4F Hole, Mt Pyre 4F Up
+Mt Pyre 5F Ceiling
+Mt Pyre 5F, Mt Pyre 5F Hole E, Mt Pyre 5F Hole SE
+Magma Hideout 1F C
+Magma Hideout 1F SE
+Magma Hideout 1F SW
+Magma Hideout 2F, Magma Hideout 2F C, Magma Hideout 2F N, Magma Hideout 2F S
+Magma Hideout 3F, Magma Hideout 3F C, Magma Hideout 3F N, Magma Hideout 3F S
+Aqua Hideout B1F NE, Aqua Hideout B1F NE Room N, Aqua Hideout B1F NE Room SE, Aqua Hideout B1F NE Room SW
+Aqua Hideout B1F S, Aqua Hideout B1F S Room E, Aqua Hideout B1F S Room NW, Aqua Hideout B1F S Room SW
+Aqua Hideout B2F, Aqua Hideout B2F E, Aqua Hideout B2F NW, Aqua Hideout B2F SW
+Aqua Hideout Warps 1, Aqua Hideout Warps 1 N, Aqua Hideout Warps 1 S, Aqua Hideout Warps 1 SE, Aqua Hideout Warps 1 SW
+Aqua Hideout Warps 2, Aqua Hideout Warps 2 C, Aqua Hideout Warps 2 E, Aqua Hideout Warps 2 W
+Aqua Hideout Warps 3, Aqua Hideout Warps 3 C, Aqua Hideout Warps 3 E, Aqua Hideout Warps 3 W
+Aqua Hideout Warps 4, Aqua Hideout Warps 4 C, Aqua Hideout Warps 4 E, Aqua Hideout Warps 4 W
+Contest Hall, Contest Hall NE, Contest Hall NW, Contest Hall S
+Department Store, Department Store 1F Exit, Department Store 1F Up, Department Store 2F Down, Department Store 2F Up, Department Store 3F Down, Department Store 3F Up, Department Store 4F Down, Department Store 4F Up, Department Store 5F Down, Department Store 5F Up
+Seafloor Cavern R1 SW
+Seafloor Cavern R1, Seafloor Cavern R1 N, Seafloor Cavern R1 SE
+Seafloor Cavern R2 N
+Seafloor Cavern R2 S
+Seafloor Cavern R2 SE
+Seafloor Cavern R3, Seafloor Cavern R3 C, Seafloor Cavern R3 NE
+Seafloor Cavern R3 NW
+Seafloor Cavern R3 S
+Seafloor Cavern R4 NE
+Seafloor Cavern R4 NW
+Seafloor Cavern R4 SE
+Seafloor Cavern R4 SW
+Seafloor Cavern R5 C
+Seafloor Cavern R5 N
+Seafloor Cavern R5 S
+Seafloor Cavern R6, Seafloor Cavern R6 N, Seafloor Cavern R6 SE
+Seafloor Cavern R6 SW
+Sky Pillar 1F, Sky Pillar 1F S, Sky Pillar 1F Up
+Sky Pillar 2F, Sky Pillar 2F Down, Sky Pillar 2F Up
+Sky Pillar 3F, Sky Pillar 3F Down, Sky Pillar 3F Up
+Sky Pillar 3F C
+Sky Pillar 4F Down
+Sky Pillar 4F, Sky Pillar 4F Up, Sky Pillar 4F C
+Victory Road B1F SW Room E
+Victory Road B1F SW Room NE
+Victory Road B1F SW Room SW
+Victory Road B1F, Victory Road B1F NW, Victory Road B1F S
+Victory Road B1F SE
+Victory Road B2F C
+Victory Road B2F SW
+Victory Road B2F NE
+Victory Road B2F SE
+E4 Pokecenter, E4 Pokecenter S, E4 Pokecenter N, E4 Pokecenter W
+Lavaridge Pokecenter, Lavaridge Pokecenter S, Lavaridge Pokecenter W, Lavaridge Pokecenter N
+Navel Rock, Navel Rock NE, Navel Rock NW, Navel Rock S
+R105 Regice
+R108 Abandoned Ship
+R110 New Mauville
+R115 Meteor Falls Exit
+R124 Treasure Hunter
+R131 Sky Pillar
+R120 Scorched Slab
+R122 Mt. Pyre
+Ever Grande, Ever Grande Pokecenter, Ever Grande Victory Road
+Sootopolis
+R128 Seafloor Cavern
+Oldale Pokecenter, Oldale Pokecenter S, Oldale Pokecenter W
+Petalburg Pokecenter, Petalburg Pokecenter S, Petalburg Pokecenter W
+Rustboro Pokecenter, Rustboro Pokecenter S, Rustboro Pokecenter W
+Dewford Pokecenter, Dewford Pokecenter S, Dewford Pokecenter W
+Slateport Pokecenter, Slateport Pokecenter S, Slateport Pokecenter W
+Mauville Pokecenter, Mauville Pokecenter S, Mauville Pokecenter W
+Verdanturf Pokecenter, Verdanturf Pokecenter S, Verdanturf Pokecenter W
+Fallarbor Pokecenter, Fallarbor Pokecenter S, Fallarbor Pokecenter W
+Fortree Pokecenter, Fortree Pokecenter S, Fortree Pokecenter W
+Lilycove Pokecenter, Lilycove Pokecenter S, Lilycove Pokecenter W
+Mossdeep Pokecenter, Mossdeep Pokecenter S, Mossdeep Pokecenter W
+Sootopolis Pokecenter, Sootopolis Pokecenter S, Sootopolis Pokecenter W
+Pacifidlog Pokecenter, Pacifidlog Pokecenter S, Pacifidlog Pokecenter W
+Rustboro Gym Interior
+Dewford Gym Interior
+Mauville Gym Interior
+Lavaridge Gym Interior
+Petalburg Gym Interior
+Fortree Gym Interior
+Mossdeep Gym Interior
+Sootopolis Gym Interior
+E4 Sidney
+E4 Phoebe
+E4 Glacia
+E4 Drake
+Champion
+Steven's House
+Slateport Shipyard Interior
+Space Center 2F
+Bike Shop
+Rayquaza
+Kyogre
+Groudon
+Ho-oh
+Lugia
+Registeel
+Regirock
+Regice
+Mew
