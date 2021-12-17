@@ -1,7 +1,12 @@
 from graph_helper import connect_nodes, draw_graph, shortest_path
-import icecream as ic
 import PySimpleGUI as sg
+from helper import save_filename_template
 from thefuzz import process
+
+
+CONNECT_BUTTON_KEY = 'key.button.connect'
+FIND_PATH_BUTTON_KEY = 'key.button.find_path'
+MORE_INFO_TEXT_KEY = 'key.text.more_info'
 
 
 def fuzzy_search_results_pretty_print(list_of_tuples):
@@ -17,12 +22,12 @@ def fuzzy_search_results_pretty_print(list_of_tuples):
 
 def gui_layout():
     left_column = __left_column_layout_helper('start') + __left_column_layout_helper('end') + [
-        [sg.Button('Connect Locations', key='-CONNECT-')],
-        [sg.Button('Find Path', key='-FIND-PATH-')],
+        [sg.Button('Connect Locations', key=CONNECT_BUTTON_KEY)],
+        [sg.Button('Find Path', key=FIND_PATH_BUTTON_KEY)],
     ]
 
     right_column = [
-        [sg.Text(size=(100, 20), key='-TEXT-MORE-INFO-')],
+        [sg.Text(size=(100, 20), key=MORE_INFO_TEXT_KEY)],
     ]
 
     layout = [
@@ -39,10 +44,10 @@ def gui_layout():
 
 def __left_column_layout_helper(input_type: str):
     return [
-        [sg.Text(input_type)]
+        [sg.Text(input_type)],
         [sg.In(size=(50, 1), enable_events=True,
-               key=f'-INPUT-{input_type.upper()}-')],
-        [sg.Text(size=(100, 20), key=f'-TEXT-{input_type.upper()}-')],
+               key=f'key.input.{input_type}')],
+        [sg.Text(size=(100, 20), key=f'key.text.{input_type}')],
     ]
 
 
@@ -52,37 +57,35 @@ def gui_loop(window, G, playthrough_id):
 
     while True:
         event, values = window.read()
-        if event == 'OK' or event == sg.WIN_CLOSED:
+        if event == sg.WIN_CLOSED:
             break
-        elif event == '-INPUT-START-':
-            if values['-INPUT-START-']:
-                fuzzy_search_results = process.extract(
-                    values['-INPUT-START-'], list(G.nodes), limit=10)
-                current_best_fuzzy_results_start = fuzzy_search_results[0]
-                window['-TEXT-START-'].update(
-                    fuzzy_search_results_pretty_print(fuzzy_search_results))
-        elif event == '-INPUT-END-':
-            if values['-INPUT-END-']:
-                fuzzy_search_results = process.extract(
-                    values['-INPUT-END-'], list(G.nodes), limit=10)
-                current_best_fuzzy_results_end = fuzzy_search_results[0]
-                window['-TEXT-END-'].update(
-                    fuzzy_search_results_pretty_print(fuzzy_search_results))
-        elif event == '-CONNECT-':
-            ic(f'Connect {current_best_fuzzy_results_start} with {current_best_fuzzy_results_end}')
-
+        elif event == 'key.input.start':
+            current_best_fuzzy_results_start = __handle_fuzzy_input_helper(
+                window, values, G, 'start')
+        elif event == 'key.input.end':
+            current_best_fuzzy_results_end = __handle_fuzzy_input_helper(
+                window, values, G, 'end')
+        elif event == CONNECT_BUTTON_KEY:
             connect_nodes(
-                G, current_best_fuzzy_results_start[0], current_best_fuzzy_results_end[0])
-            f = open(f'out/playthrough{playthrough_id}.csv', 'a')
+                G, current_best_fuzzy_results_start, current_best_fuzzy_results_end)
+            f = open(save_filename_template(playthrough_id), 'a')
             f.write(
-                current_best_fuzzy_results_start[0] + ',' + current_best_fuzzy_results_end[0] + '\n')
+                current_best_fuzzy_results_start + ',' + current_best_fuzzy_results_end + '\n')
             f.close()
 
             draw_graph(G)
-        elif event == '-FIND-PATH-':
-            ic(f'Find path from {current_best_fuzzy_results_start} to {current_best_fuzzy_results_end}')
+        elif event == FIND_PATH_BUTTON_KEY:
             path = shortest_path(
-                G, current_best_fuzzy_results_start[0], current_best_fuzzy_results_end[0])
-            window['-TEXT-MORE-INFO-'].update(f'Shortest Path: {path}')
+                G, current_best_fuzzy_results_start, current_best_fuzzy_results_end)
+            window[MORE_INFO_TEXT_KEY].update(f'Shortest Path: {path}')
 
     window.close()
+
+
+def __handle_fuzzy_input_helper(window, values, G, input_type: str):
+    if values[f'key.input.{input_type}']:
+        fuzzy_search_results = process.extract(
+            values[f'key.input.{input_type}'], list(G.nodes), limit=10)
+        window[f'key.text.{input_type}'].update(
+            fuzzy_search_results_pretty_print(fuzzy_search_results))
+        return fuzzy_search_results[0][0]
