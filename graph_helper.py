@@ -173,9 +173,6 @@ def update_graph_with_teleport(G):
 
 
 def connect_nodes(G, start, end, one_way=False):
-    start = __remove_whitespace(start)
-    end = __remove_whitespace(end)
-
     if one_way:
         __add_edge(G, start, end)
     else:
@@ -186,6 +183,12 @@ def shortest_path(G, start, end):
     # TODO: remove main region name from the path list
     start = __remove_whitespace(start)
     end = __remove_whitespace(end)
+
+    # Verify that the nodes exist
+    if start not in G.nodes:
+        raise ValueError(f'Start node {start} does not exist')
+    if end not in G.nodes:
+        raise ValueError(f'End node {end} does not exist')
 
     return nx.shortest_path(G, start, end)
 
@@ -208,6 +211,13 @@ def __add_node(G, node):
 def __add_edge(G, node1, node2):
     node1 = __remove_whitespace(node1)
     node2 = __remove_whitespace(node2)
+
+    # Verify that the nodes exist
+    if node1 not in G.nodes:
+        raise ValueError(f'Node1 {node1} does not exist')
+    if node2 not in G.nodes:
+        raise ValueError(f'Node2 {node2} does not exist')
+
     G.add_edge(node1, node2)
 
 
@@ -217,5 +227,12 @@ def __add_dedge(G, node1, node2):
     """
     node1 = __remove_whitespace(node1)
     node2 = __remove_whitespace(node2)
+
+    # Verify that the nodes exist
+    if node1 not in G.nodes:
+        raise ValueError(f'Node1 {node1} does not exist')
+    if node2 not in G.nodes:
+        raise ValueError(f'Node2 {node2} does not exist')
+
     G.add_edge(node1, node2)
     G.add_edge(node2, node1)
