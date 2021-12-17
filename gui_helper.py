@@ -7,6 +7,7 @@ from thefuzz import process
 CONNECT_BUTTON_KEY = 'key.button.connect'
 FIND_PATH_BUTTON_KEY = 'key.button.find_path'
 MORE_INFO_TEXT_KEY = 'key.text.more_info'
+ONE_WAY_BUTTON_KEY = 'key.button.one_way'
 
 
 def fuzzy_search_results_pretty_print(list_of_tuples):
@@ -23,6 +24,7 @@ def fuzzy_search_results_pretty_print(list_of_tuples):
 def gui_layout():
     left_column = __left_column_layout_helper('start') + __left_column_layout_helper('end') + [
         [sg.Button('Connect Locations', key=CONNECT_BUTTON_KEY)],
+        [sg.Checkbox('One Way', key=ONE_WAY_BUTTON_KEY)],
         [sg.Button('Find Path', key=FIND_PATH_BUTTON_KEY)],
     ]
 
@@ -67,7 +69,7 @@ def gui_loop(window, G, playthrough_id):
                 window, values, G, 'end')
         elif event == CONNECT_BUTTON_KEY:
             connect_nodes(
-                G, current_best_fuzzy_results_start, current_best_fuzzy_results_end)
+                G, current_best_fuzzy_results_start, current_best_fuzzy_results_end, values[ONE_WAY_BUTTON_KEY])
             f = open(save_filename_template(playthrough_id), 'a')
             f.write(
                 current_best_fuzzy_results_start + ',' + current_best_fuzzy_results_end + '\n')
