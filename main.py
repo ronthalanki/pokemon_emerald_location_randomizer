@@ -33,16 +33,15 @@ def main(playthrough_id):
     TODO: Storage Key
     """
 
-    # You can click a button and it will show you the regions that you have not yet explored
+    # find all non-explored but accessible nodes, you can click a button and it will show you the regions that you have not yet explored
+    # Button to notate what is blocking you from searching certain nodes
     # Find nearest pokecenter
     # Click a button to figure out what location you are at
-    # Refresh button for shortest path
-    # Button to notate what is blocking you from searching certain nodes
-    # checkbox for one-way when we connect two nodes
-    # find all non-explored but accessible nodes
+    # Refresh button for another short path
     # View graph button
     # Add pictures for each region
     # If you already connected a node, then display a warning before connecting it again
+    # Find region that has the most unexplored nodes
 
     window = gui_layout()
     gui_loop(window, G, playthrough_id)
