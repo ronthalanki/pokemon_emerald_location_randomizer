@@ -1,4 +1,4 @@
-from graph_helper import connect_nodes, draw_graph, shortest_path
+from graph_helper import connect_nodes, draw_graph, find_unexplored_accessible_nodes, shortest_path
 import PySimpleGUI as sg
 from helper import save_filename_template
 from thefuzz import process
@@ -8,6 +8,9 @@ CONNECT_BUTTON_KEY = 'key.button.connect'
 FIND_PATH_BUTTON_KEY = 'key.button.find_path'
 MORE_INFO_TEXT_KEY = 'key.text.more_info'
 ONE_WAY_BUTTON_KEY = 'key.button.one_way'
+FIND_UNEXPLORED_ACCESSIBLE_WARPS = 'key.button.find_unexplored_accessible_warps'
+
+RIGHT_LAYOUT_MAX_ITEMS = 20
 
 
 def fuzzy_search_results_pretty_print(list_of_tuples):
@@ -16,7 +19,15 @@ def fuzzy_search_results_pretty_print(list_of_tuples):
     """
     return_str = ''
     for i, item in enumerate(list_of_tuples):
-        return_str += f'{i}. Location: {item[0]}, Score: {item[1]}\n'
+        return_str += f'{i + 1}. Location: {item[0]}, Score: {item[1]}\n'
+
+    return return_str
+
+
+def list_pretty_print(list):
+    return_str = ''
+    for i, item in enumerate(list):
+        return_str += f'{i + 1}. {item}\n'
 
     return return_str
 
@@ -26,6 +37,8 @@ def gui_layout():
         [sg.Button('Connect Locations', key=CONNECT_BUTTON_KEY)],
         [sg.Checkbox('One Way', key=ONE_WAY_BUTTON_KEY)],
         [sg.Button('Find Path', key=FIND_PATH_BUTTON_KEY)],
+        [sg.Button('Find Accessible & Unexplored Warps',
+                   key=FIND_UNEXPLORED_ACCESSIBLE_WARPS)],
     ]
 
     right_column = [
@@ -53,7 +66,7 @@ def __left_column_layout_helper(input_type: str):
     ]
 
 
-def gui_loop(window, G, playthrough_id):
+def gui_loop(window, G, unexplored_locations, playthrough_id):
     current_best_fuzzy_results_start = None
     current_best_fuzzy_results_end = None
 
@@ -69,7 +82,7 @@ def gui_loop(window, G, playthrough_id):
                 window, values, G, 'end')
         elif event == CONNECT_BUTTON_KEY:
             connect_nodes(
-                G, current_best_fuzzy_results_start, current_best_fuzzy_results_end, values[ONE_WAY_BUTTON_KEY])
+                G, unexplored_locations, current_best_fuzzy_results_start, current_best_fuzzy_results_end, values[ONE_WAY_BUTTON_KEY])
             f = open(save_filename_template(playthrough_id), 'a')
             f.write(
                 current_best_fuzzy_results_start + ',' + current_best_fuzzy_results_end + '\n')
@@ -80,6 +93,11 @@ def gui_loop(window, G, playthrough_id):
             path = shortest_path(
                 G, current_best_fuzzy_results_start, current_best_fuzzy_results_end)
             window[MORE_INFO_TEXT_KEY].update(f'Shortest Path: {path}')
+        elif event == FIND_UNEXPLORED_ACCESSIBLE_WARPS:
+            unexplored_accessible_nodes = find_unexplored_accessible_nodes(
+                G, unexplored_locations, current_best_fuzzy_results_start)
+            window[MORE_INFO_TEXT_KEY].update(list_pretty_print(
+                unexplored_accessible_nodes[:RIGHT_LAYOUT_MAX_ITEMS]))
 
     window.close()
 

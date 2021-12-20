@@ -8,6 +8,7 @@ from gui_helper import gui_layout, gui_loop
 
 def main(playthrough_id):
     G = generate_graph()
+    unexplored_locations = set(G.nodes())
 
     # Reconnect all the nodes found from the previous playthrough
     save_filename = save_filename_template(playthrough_id)
@@ -15,7 +16,7 @@ def main(playthrough_id):
         f = open(save_filename)
         for line in f:
             start, end = line.split(',')
-            connect_nodes(G, start, end)
+            connect_nodes(G, unexplored_locations, start, end)
 
     """
     If you update the tools you have, we need to update the graph
@@ -33,7 +34,6 @@ def main(playthrough_id):
     TODO: Storage Key
     """
 
-    # find all non-explored but accessible nodes, you can click a button and it will show you the regions that you have not yet explored
     # Button to notate what is blocking you from searching certain nodes
     # Find nearest pokecenter
     # Click a button to figure out what location you are at
@@ -42,9 +42,13 @@ def main(playthrough_id):
     # Add pictures for each region
     # If you already connected a node, then display a warning before connecting it again
     # Find region that has the most unexplored nodes
+    # Handle user mistakes and display a warning (e.g. user tries to connect a warp to multiple other warps)
+    # Currently Accessible/Inaccessible warp list
+    # Click an item on the accessible but unexplored list and that will find the shortest path to that location
+    # Sort the accessible but unexplored list by shortest path
 
     window = gui_layout()
-    gui_loop(window, G, playthrough_id)
+    gui_loop(window, G, unexplored_locations, playthrough_id)
 
 
 if __name__ == '__main__':

@@ -172,7 +172,13 @@ def update_graph_with_teleport(G):
     __add_edge(G, 'Pacifidlog Pokecenter', 'Pacifidlog')
 
 
-def connect_nodes(G, start, end, one_way=False):
+def connect_nodes(G, unexplored_locations, start, end, one_way=False):
+    start = __remove_whitespace(start)
+    end = __remove_whitespace(end)
+
+    unexplored_locations.remove(start)
+    unexplored_locations.remove(end)
+
     if one_way:
         __add_edge(G, start, end)
     else:
@@ -191,6 +197,10 @@ def shortest_path(G, start, end):
         raise ValueError(f'End node {end} does not exist')
 
     return nx.shortest_path(G, start, end)
+
+
+def find_unexplored_accessible_nodes(G, unexplored_locations, start):
+    return sorted(list(set(nx.descendants(G, start)) & unexplored_locations))
 
 
 def draw_graph(graph):
