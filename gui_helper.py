@@ -1,4 +1,4 @@
-from graph_helper import connect_nodes, draw_graph, find_unexplored_accessible_nodes, shortest_path
+from graph_helper import connect_dead_end, connect_nodes, draw_graph, find_unexplored_accessible_nodes, shortest_path
 import PySimpleGUI as sg
 from helper import save_filename_template
 from thefuzz import process
@@ -8,6 +8,7 @@ CONNECT_BUTTON_KEY = 'key.button.connect'
 FIND_PATH_BUTTON_KEY = 'key.button.find_path'
 MORE_INFO_TEXT_KEY = 'key.text.more_info'
 ONE_WAY_BUTTON_KEY = 'key.button.one_way'
+DEAD_END_BUTTON_KEY = 'key.button.dead_end'
 FIND_UNEXPLORED_ACCESSIBLE_WARPS = 'key.button.find_unexplored_accessible_warps'
 VIEW_GRAPH_BUTTON_KEY = 'key.button.view_graph'
 
@@ -37,6 +38,7 @@ def gui_layout():
     left_column = __left_column_layout_helper('start') + __left_column_layout_helper('end') + [
         [sg.Button('Connect Locations', key=CONNECT_BUTTON_KEY)],
         [sg.Checkbox('One Way', key=ONE_WAY_BUTTON_KEY)],
+        [sg.Checkbox('Dead End', key=DEAD_END_BUTTON_KEY)],
         [sg.Button('Find Path', key=FIND_PATH_BUTTON_KEY)],
         [sg.Button('Find Accessible & Unexplored Warps',
                    key=FIND_UNEXPLORED_ACCESSIBLE_WARPS)],
@@ -83,12 +85,16 @@ def gui_loop(window, G, unexplored_locations, playthrough_id):
             current_best_fuzzy_results_end = __handle_fuzzy_input_helper(
                 window, values, G, 'end')
         elif event == CONNECT_BUTTON_KEY:
-            connect_nodes(
-                G, unexplored_locations, current_best_fuzzy_results_start, current_best_fuzzy_results_end, values[ONE_WAY_BUTTON_KEY])
-            f = open(save_filename_template(playthrough_id), 'a')
-            f.write(
-                current_best_fuzzy_results_start + ',' + current_best_fuzzy_results_end + '\n')
-            f.close()
+            if values[DEAD_END_BUTTON_KEY]:
+                connect_dead_end(G, unexplored_locations,
+                                 current_best_fuzzy_results_start)
+            else:
+                connect_nodes(
+                    G, unexplored_locations, current_best_fuzzy_results_start, current_best_fuzzy_results_end, values[ONE_WAY_BUTTON_KEY])
+                f = open(save_filename_template(playthrough_id), 'a')
+                f.write(
+                    current_best_fuzzy_results_start + ',' + current_best_fuzzy_results_end + '\n')
+                f.close()
 
             draw_graph(G)
         elif event == FIND_PATH_BUTTON_KEY:

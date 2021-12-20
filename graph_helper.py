@@ -3,6 +3,9 @@ import matplotlib.pyplot as plt
 import re
 
 
+DEAD_END_NODE = 'Dead End'
+
+
 def generate_graph():
     """
     Generates a graph based on the locations.txt file.
@@ -22,6 +25,8 @@ def generate_graph():
 
             # Add edges between warps that are in the same region
             __add_dedge(G, region[0], warp)
+
+    __add_node(G, DEAD_END_NODE)
 
     # Hardcoded rules (this is to handle one-way cases)
     __add_edge(G, 'Lavaridge', 'R112')
@@ -183,6 +188,14 @@ def connect_nodes(G, unexplored_locations, start, end, one_way=False):
         __add_edge(G, start, end)
     else:
         __add_dedge(G, start, end)
+
+
+def connect_dead_end(G, unexplored_locations, start):
+    start = __remove_whitespace(start)
+
+    unexplored_locations.remove(start)
+
+    __add_edge(G, start, DEAD_END_NODE)
 
 
 def shortest_path(G, start, end):
