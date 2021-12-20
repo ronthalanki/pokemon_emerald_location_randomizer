@@ -9,6 +9,7 @@ FIND_PATH_BUTTON_KEY = 'key.button.find_path'
 MORE_INFO_TEXT_KEY = 'key.text.more_info'
 ONE_WAY_BUTTON_KEY = 'key.button.one_way'
 FIND_UNEXPLORED_ACCESSIBLE_WARPS = 'key.button.find_unexplored_accessible_warps'
+VIEW_GRAPH_BUTTON_KEY = 'key.button.view_graph'
 
 RIGHT_LAYOUT_MAX_ITEMS = 20
 
@@ -39,6 +40,7 @@ def gui_layout():
         [sg.Button('Find Path', key=FIND_PATH_BUTTON_KEY)],
         [sg.Button('Find Accessible & Unexplored Warps',
                    key=FIND_UNEXPLORED_ACCESSIBLE_WARPS)],
+        [sg.Button('DEBUG ONLY - View Graph', key=VIEW_GRAPH_BUTTON_KEY)],
     ]
 
     right_column = [
@@ -98,6 +100,8 @@ def gui_loop(window, G, unexplored_locations, playthrough_id):
                 G, unexplored_locations, current_best_fuzzy_results_start)
             window[MORE_INFO_TEXT_KEY].update(list_pretty_print(
                 unexplored_accessible_nodes[:RIGHT_LAYOUT_MAX_ITEMS]))
+        elif event == VIEW_GRAPH_BUTTON_KEY:
+            draw_graph(G)
 
     window.close()
 

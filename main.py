@@ -38,7 +38,6 @@ def main(playthrough_id):
     # Find nearest pokecenter
     # Click a button to figure out what location you are at
     # Refresh button for another short path
-    # View graph button
     # Add pictures for each region
     # If you already connected a node, then display a warning before connecting it again
     # Find region that has the most unexplored nodes
